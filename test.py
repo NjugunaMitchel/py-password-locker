@@ -7,8 +7,8 @@ class UserTest(unittest.TestCase):
     '''
     Testing class that defines test cases
     '''
-    def setUp(self):
-        '''
+    def tearDown(self):
+       """  '''
         set up runs befors each test case
         '''
 
@@ -19,15 +19,29 @@ class UserTest(unittest.TestCase):
         self.assertEqual(self.Users.Sname,'MUTHONI')
         self.assertEqual(self.Users.username,'NJUGUNAS')
         self.assertEqual(self.Users.password,'YHS67')
-        self.assertEqual(self.Users.email,'ABC@CD.EF')
+        self.assertEqual(self.Users.email,'ABC@CD.EF') """
+    User.user_list = []
+
+        # save a user
 
     def test_saveUser(self):
         self.Users.saveUser()
         self.assertEqual(len(User.user_list),1)
 
+        #save multiple users
+    def  test_savemore(self):
+        self.User.saveUser()
+        test = User('jane','Doe','jadoe','djdj9','jd@jfj.vom')
+        test.save()
+        self.assertEqual(len(User.user_list),2)
+
+        # delete user
     def test_delete(self):
+        self.Users.saveUser()
+        test = User('John','Doe','JD','ddduu773','john@ab.com')
+        test.saveUser()
         self.Users.delete()
-        selft.assertEqual(len(User.user_list),1)
+        self.assertEqual(len(User.user_list),1)
 
 if __name__ == '__main__':
     unittest.main()
