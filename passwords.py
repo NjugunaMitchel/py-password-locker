@@ -1,4 +1,4 @@
-class Credentials():
+class Credentials:
 
 # users list
   credentials_list  = []
@@ -23,10 +23,10 @@ class Credentials():
   def delete(self):
         Credentials.credentials_list.remove(self)
 
-class accounts(Credentials):
+class accounts():
     user_list = []
 
-    def __init__(self,username,password):
+    def __init__(self,username,password,email):
         self.username = username
         self.password = password
 
@@ -42,6 +42,9 @@ def  account_exists(cls,number):
             return true
 
     return false;
+
+def display_accounts(cls):
+    return cls.user_list
 
 
 
