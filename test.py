@@ -1,6 +1,7 @@
 import unittest #importing the test module
 #import Users class
 from passwords import Credentials 
+from passwords import accounts
 
 ## create a subclass 
 class CredentialsTest(unittest.TestCase):
@@ -46,19 +47,22 @@ class CredentialsTest(unittest.TestCase):
         self.assertEqual(len(Credentials.credentials_list),1)
 
     def test_auth_user(self):
-        self.newCredentials.saveCredentials()
-        test = Credentials('Melisa','John','Mj','gsys728','melisa@k0.com')
+        self.newaccounts.saveCredentials()
+        test = account('Mj','gsys728','melisa@k0.com')
         test.saveCredentials()
-        match_credentials = Credentials.auth_by_email('melisa@k0.com')
+        match_credentials = accounts.auth_by_email('melisa@k0.com')
         self.assertEqual(match_credentials.email,test.email)
 
 
     def  test_account_exists(self):
-         self.Credentials.saveCredentials()
-         test = Credentials('test','user','tester','hdheu866','tester@co.com')
+         self.newCredentials.saveCredentials()
+         test = accounts('tester','hdheu866','tester@co.com')
          test.saveCredentials()
-         account_exists = Credentials.account_exists('tester@co.com')
+         account_exists = accounts.account_exists('tester@co.com')
          self.assertTrue(account_exists)
+
+    def test_display_all_Users(self):
+        self.assertEqual(accounts.display_accounts(),accounts.user_list)
           
    
 
