@@ -47,7 +47,7 @@ class CredentialsTest(unittest.TestCase):
         self.assertEqual(len(Credentials.credentials_list),1)
 
     def test_auth_user(self):
-        self.newaccounts.saveCredentials()
+        self.accounts.saveCredentials()
         test = account('Mj','gsys728','melisa@k0.com')
         test.saveCredentials()
         match_credentials = accounts.auth_by_email('melisa@k0.com')
@@ -62,7 +62,7 @@ class CredentialsTest(unittest.TestCase):
          self.assertTrue(account_exists)
 
     def test_display_all_Users(self):
-        self.assertEqual(accounts.display_accounts(),accounts.user_list)
+        self.assertEqual(accounts.display_accounts(cls),accounts.user_list)
           
    
 
