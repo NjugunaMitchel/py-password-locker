@@ -1,7 +1,7 @@
 import unittest #importing the test module
 #import Users class
-from passwords import Credentials 
-from passwords import accounts
+
+from passwords import Credentials
 
 ## create a subclass 
 class CredentialsTest(unittest.TestCase):
@@ -46,23 +46,10 @@ class CredentialsTest(unittest.TestCase):
         self.newCredentials.delete()
         self.assertEqual(len(Credentials.credentials_list),1)
 
-    def test_auth_user(self):
-        self.accounts.saveCredentials()
-        test = account('Mj','gsys728','melisa@k0.com')
-        test.saveCredentials()
-        match_credentials = accounts.auth_by_email('melisa@k0.com')
-        self.assertEqual(match_credentials.email,test.email)
+   
 
 
-    def  test_account_exists(self):
-         self.newCredentials.saveCredentials()
-         test = accounts('tester','hdheu866','tester@co.com')
-         test.saveCredentials()
-         account_exists = accounts.account_exists('tester@co.com')
-         self.assertTrue(account_exists)
-
-    def test_display_all_Users(self):
-        self.assertEqual(accounts.display_accounts(cls),accounts.user_list)
+  
           
    
 

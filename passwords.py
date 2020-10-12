@@ -1,35 +1,4 @@
-class accounts:
-    user_list = []
-
-    def __init__(self,username,password,email):
-        self.username = username
-        self.password = password
-
-    @classmethod
-    def auth_by_email(cls,email):
-        for accounts in cls.user_list:
-            if accounts.email == email:
-                return accounts
-
-    def  account_exists(cls,number):
-        for accounts in cls.user_list:
-            if accounts.email == email:
-                return true
-
-        return false;
-
-    def display_accounts(cls):
-        return cls.user_list
-
-
-
-
-
-
-""" def authn_user(self):
-        details = input('your name') """
-      
-class Credentials(accounts):
+class Credentials():
 
 # users list
   credentials_list  = []
