@@ -2,8 +2,8 @@ class accounts:
     user_list = []
 
     def __init__(self,username,password,email):
-        self.username = username
-        self.password = password
+        self.accounts.username = username
+        self.accounts.password = password
 
     def saveAccounts(self):
         accounts.user_list.append(self)
@@ -24,5 +24,5 @@ class accounts:
 
         return False;
 
-    def display_accounts(cls):
+    def display_all_users(cls):
         return cls.user_list

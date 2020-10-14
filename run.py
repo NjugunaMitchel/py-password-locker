@@ -53,7 +53,12 @@ def main():
     username = input()
     code = input(f'Press Enter {username}')
     while True:
-        print("Use these short codes : cc - create a new contact, dc - display contacts, fc -find a contact, ex -exit the contact list,del-to delete ")
+        print("Use these short codes  :")
+        print("cc - create a new contact")
+        print("dc - display contacts")
+        print("fc -find a contact")
+        print("ex -exit the contact list")
+        print("del-to delete ")
 
         short_code = input()
         if short_code == 'cc':
@@ -72,16 +77,15 @@ def main():
             print('password:')
             passwords = input(round(random.random()))
 
-
             saveCredentials(create(fname,lname,username,passwords,email))
-            print('/n')
-            print(f'new Credentials{fname}')
+            
+            print(f'Your data has been taken d{fname}')
 
         elif short_code == 'dc':
             if display_all_users():
                 print('users:')
                 for account in display_all_users():
-                    print(f'{Credentials.username} {Credentials.email}')
+                    print(f'{account.username} {account.email}')
 
         elif short_code == 'fc':
             print('enter email address to search')
